@@ -12,6 +12,7 @@ const  cifradoCesar =(texto) =>{
  // charCodeAt()   --- Convierte un String en numero (numero ASQII)
 
    for (let i=0; i<texto.length; i++){
+
       if(parseInt(texto[i])%1 ===0){
        alert("Lo sentimos, no se admiten numeros. Vuelve a intentarlo.-- GRACIAS");
        break;
@@ -29,13 +30,13 @@ const  cifradoCesar =(texto) =>{
         cifradoCont+= letra;
       }
       else if(texto.charCodeAt(i) >=65 && texto.charCodeAt(i)<=90){ // Mayusculas
-        let numAsq=texto.charCodeAt(i) - 65 + 4 % 26 + 65; // Formula: Obtiene el numero de la letra en ASQII
+        let numAsq=texto.charCodeAt(i) - 65 + 5 % 26 + 65; // Formula: Obtiene el numero de la letra en ASQII
         let mensajeCifrado=String.fromCharCode(numAsq); // Cifra el numero y lo convierte a letra
         cifradoCont+= mensajeCifrado;  //Guarda las letras obtenidas
       }
 
       else if(texto.charCodeAt(i) >=97 && texto.charCodeAt(i)<=122){  // Minusculas
-        let numAsq=texto.charCodeAt(i) - 97 + 4 % 26 + 97; // Formula: Obtiene el numero de la letra en ASQII
+        let numAsq=texto.charCodeAt(i) - 97 + 5 % 26 + 97; // Formula: Obtiene el numero de la letra en ASQII
         let mensajeCifrado=String.fromCharCode(numAsq); // Cifra el numero y lo convierte a letra
         cifradoCont+= mensajeCifrado;  //Guarda las letras obtenidas
       }
@@ -60,7 +61,12 @@ const descifradoCesar = (texto) => {
 
 
    for (let i=0; i<texto.length; i++){
-     if (texto.charCodeAt(i)===32){ //agrega si hay espacios
+     if(parseInt(texto[i])%1 ===0){
+      alert("Lo sentimos, no se admiten numeros. Vuelve a intentarlo.-- GRACIAS");
+      break;
+     }
+
+     else if (texto.charCodeAt(i)===32){ //agrega si hay espacios
         let espacio=" ";
         descifradoCont+= espacio;
      }
@@ -74,21 +80,22 @@ const descifradoCesar = (texto) => {
        descifradoCont+= letra;
      }
      else if(texto.charCodeAt(i) >=65 && texto.charCodeAt(i)<=90){ // Mayusculas
-       let numAsq=(texto.charCodeAt(i) + 65 - 4) % 26 + 65; // Formula: Obtiene el numero de la letra en ASQII
-       let mensajeCifrado=String.fromCharCode(numAsq); // Cifra el numero y lo convierte a letra
-       descifradoCont+= mensajeCifrado;  //Guarda las letras obtenidas
+       let numAsq=(texto.charCodeAt(i) + 65 - 5 )% 26 + 65; // Formula: Obtiene el numero de la letra en ASQII
+       let mensajeDescifrado=String.fromCharCode(numAsq); // Cifra el numero y lo convierte a letra
+       descifradoCont+= mensajeDescifrado;  //Guarda las letras obtenidas
      }
 
      else if(texto.charCodeAt(i) >=97 && texto.charCodeAt(i)<=122){  // Minusculas
        //console.log(texto);
-       let numAsq=texto.charCodeAt(i) + 97 - 4 % 26 - 97; // Formula: Obtiene el numero de la letra en ASQII
+      let numAsq=texto.charCodeAt(i) + 97 - 5 % 26 - 97; // Formula: Obtiene el numero de la letra en ASQII
        //console.log(numAsq);
-       let mensajeCifrado=String.fromCharCode(numAsq); // Cifra el numero y lo convierte a letra
-       descifradoCont+= mensajeCifrado;  //Guarda las letras obtenidas
+       let mensajeDescifrado=String.fromCharCode(numAsq); // Cifra el numero y lo convierte a letra
+       descifradoCont+= mensajeDescifrado;  //Guarda las letras obtenidas
      }
 
-    document.getElementById("mensajeCifradoDescifrado").innerHTML=descifradoCont;
 
   }
+
+  document.getElementById("mensajeCifradoDescifrado").innerHTML=descifradoCont;
 
  }

@@ -6,9 +6,10 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1> <--   CIFRADO CESAR   --></h1>
-    <div id="root"></div>
 
+      <h1> <--   CIFRADO CESAR   --></h1>
+
+    <div id="root"></div>
 
     <div id="elementosIndex">
        <div id="mensajeCesar">
@@ -16,14 +17,16 @@
          <input type="text" name="mensaje" id="textoMensaje"> </input>
        </div>
 
-  <!-- <div id="clavePosicion">
+<!--  <div id="clavePosicion">
      <p>Ingresa un número (Seguridad):</p>
      <input type="text" name="Clave" id="keyPosicion"> </input>
-   </div>-->
+   </div> -->
+
    <br><br>
+
       <div>
-        <input type="button" value="CIFRADO" onclick="cifradoCesar()"></input>
-        <input type="button" value="DESCIFRADO" onclick="descifradoCesar()"></input>
+        <input type="button" value="CIFRADO" onclick="cifradoCesar()" class="boton"></input>
+        <input type="button" value="DESCIFRADO" onclick="descifradoCesar()" class="boton"></input>
       </div>
    <br>
       <div id="mensajeCifradoDescifrado">

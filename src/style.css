@@ -21,17 +21,16 @@ p {
 
 body {
   background-color: #7FE8F2  ;
-  background-image: url("fondo.jpg");
+  //background-image: url("fondo.jpg");
   background-position:center;
   background-size:cover;
 
 }
 
 div {   //div que contiene todos los demas div de la pagina
-   background-color:red;
    border-style:outset;
    width: 470px;
-   border: medium;
+  // border: medium;
    padding: 1em;
    display:inline-block;
    position:inherit;
@@ -49,8 +48,9 @@ h1 {
 
 }
 
-button{
-  font-size: 14px;
+.boton {     //botones
+  font-size: 120px;
+  //font-family: cursive;
 
 
 }
