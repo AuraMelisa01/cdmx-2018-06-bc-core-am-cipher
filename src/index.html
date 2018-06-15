@@ -6,28 +6,31 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1> CIFRADO CESAR</h1>
+    <h1> <--   CIFRADO CESAR   --></h1>
     <div id="root"></div>
 
-    <div id="mensajeCesar">
-     <p>Ingresa Mensaje:</p>
-     <input type="text" name="mensaje" id="textoMensaje"> </input>
-   </div>
 
-   <div id="clavePosicion">
-     <p>Ingresa un numero de posición:</p>
+    <div id="elementosIndex">
+       <div id="mensajeCesar">
+         <p>Ingresa Mensaje:</p>
+         <input type="text" name="mensaje" id="textoMensaje"> </input>
+       </div>
+
+  <!-- <div id="clavePosicion">
+     <p>Ingresa un número (Seguridad):</p>
      <input type="text" name="Clave" id="keyPosicion"> </input>
-   </div>
+   </div>-->
+   <br><br>
+      <div>
+        <input type="button" value="CIFRADO" onclick="cifradoCesar()"></input>
+        <input type="button" value="DESCIFRADO" onclick="descifradoCesar()"></input>
+      </div>
    <br>
-   <div>
-    <input type="button" value="CIFRADO" onclick="cifradoCesar()" ></input>
-    <input type="button" value="DESCIFRADO" onclick="descifradoCesar()"></input>
-   </div>
-   <br>
-   <div id="mensajeCifradoDescifrado">
+      <div id="mensajeCifradoDescifrado">
      <!--<p>Mensaje Cifrado/Descifrado:</p>
      <input type="text" name="mensaje_Cod_Des" id="mensajeCifDes"> </input>-->
-   </div>
+     </div>
+ </div>
 
     <script src="cipher.js"></script>
     <script src="index.js"></script>

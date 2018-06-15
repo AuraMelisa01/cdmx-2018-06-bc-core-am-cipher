@@ -2,9 +2,9 @@
 //window.cipher = {
 //};
 
-const  cifradoCesar =(texto,clave) =>{
+const  cifradoCesar =(texto) =>{
  texto=document.getElementById("textoMensaje").value;
- clave=document.getElementById("keyPosicion").value;
+ //clave=document.getElementById("keyPosicion").value;
 
  let cifradoCont="";
  //let rango;
@@ -29,13 +29,13 @@ const  cifradoCesar =(texto,clave) =>{
         cifradoCont+= letra;
       }
       else if(texto.charCodeAt(i) >=65 && texto.charCodeAt(i)<=90){ // Mayusculas
-        let numAsq=texto.charCodeAt(i) - 65 + clave % 26 + 65; // Formula: Obtiene el numero de la letra en ASQII
+        let numAsq=texto.charCodeAt(i) - 65 + 4 % 26 + 65; // Formula: Obtiene el numero de la letra en ASQII
         let mensajeCifrado=String.fromCharCode(numAsq); // Cifra el numero y lo convierte a letra
         cifradoCont+= mensajeCifrado;  //Guarda las letras obtenidas
       }
 
       else if(texto.charCodeAt(i) >=97 && texto.charCodeAt(i)<=122){  // Minusculas
-        let numAsq=texto.charCodeAt(i) - 97 + clave % 26 + 97; // Formula: Obtiene el numero de la letra en ASQII
+        let numAsq=texto.charCodeAt(i) - 97 + 4 % 26 + 97; // Formula: Obtiene el numero de la letra en ASQII
         let mensajeCifrado=String.fromCharCode(numAsq); // Cifra el numero y lo convierte a letra
         cifradoCont+= mensajeCifrado;  //Guarda las letras obtenidas
       }
@@ -51,10 +51,10 @@ const  cifradoCesar =(texto,clave) =>{
 // cifradoCesar();
 
 
-const descifradoCesar = (texto, clave) => {
+const descifradoCesar = (texto) => {
 
    texto=document.getElementById("textoMensaje").value;
-   clave=document.getElementById("keyPosicion").value;
+   //clave=document.getElementById("keyPosicion").value;
 
   let descifradoCont="";
 
@@ -67,7 +67,6 @@ const descifradoCesar = (texto, clave) => {
      //else if(texto.charCodeAt(i)%1===0){
      else if(texto.charCodeAt(i)===196){ //Mayuscula Ñ ---
        let letra="Ñ";
-       console.log(letra)
        descifradoCont+= letra;
      }
      else if(texto.charCodeAt(i)===228){ //Minuscula ñ
@@ -75,14 +74,14 @@ const descifradoCesar = (texto, clave) => {
        descifradoCont+= letra;
      }
      else if(texto.charCodeAt(i) >=65 && texto.charCodeAt(i)<=90){ // Mayusculas
-       let numAsq=(texto.charCodeAt(i) + 65 - clave) % 26 + 65; // Formula: Obtiene el numero de la letra en ASQII
+       let numAsq=(texto.charCodeAt(i) + 65 - 4) % 26 + 65; // Formula: Obtiene el numero de la letra en ASQII
        let mensajeCifrado=String.fromCharCode(numAsq); // Cifra el numero y lo convierte a letra
        descifradoCont+= mensajeCifrado;  //Guarda las letras obtenidas
      }
 
      else if(texto.charCodeAt(i) >=97 && texto.charCodeAt(i)<=122){  // Minusculas
        //console.log(texto);
-       let numAsq=texto.charCodeAt(i) + 97 - clave % 26 - 97; // Formula: Obtiene el numero de la letra en ASQII
+       let numAsq=texto.charCodeAt(i) + 97 - 4 % 26 - 97; // Formula: Obtiene el numero de la letra en ASQII
        //console.log(numAsq);
        let mensajeCifrado=String.fromCharCode(numAsq); // Cifra el numero y lo convierte a letra
        descifradoCont+= mensajeCifrado;  //Guarda las letras obtenidas
