@@ -1,5 +1,4 @@
 h1 {
-
     text-align: center;  /*Centra el texto*/
     font-size: 40px;
     font-family: cursive;
@@ -35,8 +34,6 @@ p {
     border-color: #F1C40F ;
 }
 
-
-
 .boton{
   font-family: 'Kaushan Script', cursive;
   font-size: 30px;
@@ -45,9 +42,7 @@ p {
   border-style:groove;
   background-color:  #F7DC6F ;
   position: static;
-
 }
-
 
 body {
   background-color: #F9E79F;
@@ -68,6 +63,7 @@ div{
   background-size: 100% 100%;
   position: static;
 }
+
 
 .container{
   margin: 1rem;

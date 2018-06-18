@@ -11,7 +11,6 @@ const  cifradoCesar =(texto) =>{
  //let rango;
  // toUpperCase()  --- Covierte en mayusculas
  // charCodeAt()   --- Convierte un String en numero (numero ASQII)
-
    for (let i=0; i<texto.length; i++){ //Realiza ciclos por cada palabra encontrada
       if(parseInt(texto[i])%1 ===0){
        alert("Lo sentimos, no se admiten numeros. Vuelve a intentarlo.-- GRACIAS");
@@ -38,20 +37,20 @@ const  cifradoCesar =(texto) =>{
 
       else if(texto.charCodeAt(i) >=97 && texto.charCodeAt(i)<=122 ){  // Minusculas
         let textNum=texto.charCodeAt(i);  //Obtiene el numero Ascii
-        let numAsq= textNum - 97 + 4 % 26 + 97;  // Formula: Obtiene el numero a reemplazar de acuerdo a la formula
+        let numAsq= (textNum - 97 + 4 )% 26 + 97;  // Formula: Obtiene el numero a reemplazar de acuerdo a la formula
         let mensajeCifrado=String.fromCharCode(numAsq); // Obtiene el numero adquirido en numAsq y lo convierte a un caracter de acuerdo al codigo ASCII
         cifradoCont+= mensajeCifrado;  //Guarda las letras obtenidas
       }
 
 
-  }
+    }
 
      document.getElementById("mensajeCifradoDescifrado").innerHTML=cifradoCont;
-}
+    }
 
 
 
-// cifradoCesar();
+    // cifradoCesar();
 
 
 const descifradoCesar = (texto) => {
@@ -63,7 +62,12 @@ const descifradoCesar = (texto) => {
 
 
    for (let i=0; i<texto.length; i++){
-     if (texto.charCodeAt(i)===32){ //agrega si hay espacios
+     if(parseInt(texto[i])%1 ===0){
+      alert("Lo sentimos, no se admiten numeros. Vuelve a intentarlo.-- GRACIAS");
+      break;
+     }
+
+     else if (texto.charCodeAt(i)===32){ //agrega si hay espacios
         let espacio=" ";
         descifradoCont+= espacio;
      }
@@ -90,10 +94,12 @@ const descifradoCesar = (texto) => {
        //console.log(numAsq);
        let mensajeCifrado=String.fromCharCode(numAsq); // Obtiene el numero adquirido en numAsq y lo convierte a un caracter de acuerdo al codigo ASCII
        descifradoCont+= mensajeCifrado;  //Guarda las letras obtenidas
-     }
 
-    document.getElementById("mensajeCifradoDescifrado").innerHTML=descifradoCont;
+      }
+
 
   }
+
+  document.getElementById("mensajeCifradoDescifrado").innerHTML=descifradoCont;
 
  }
