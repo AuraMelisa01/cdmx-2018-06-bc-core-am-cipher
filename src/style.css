@@ -1,7 +1,6 @@
 h1 {
     text-align: center;  /*Centra el texto*/
     font-size: 40px;
-    font-family: cursive;
     font-family: 'Kaushan Script', cursive;
 
 }
@@ -11,25 +10,27 @@ h1 {
   border-radius: 500px;
   margin: auto;
   margin-top: 20px; /*margen superior*/
-  width: 500px; /*ancho*/
-  height: 60px; /*alto*/
+  width: 450px; /*ancho borde cifrado cesar*/
+  height: 60px; /*alto borde cifrado cesar*/
 
 }
 
 p {
 
-  //font-family: cursive;
+  /*font-family: cursive;*/
   font-family: 'Kaushan Script', cursive;
-  font-size: 35px;
+  font-size: 26px;
   justify-content: center;
 }
 
 #textoMensaje {   /*input del txt donde se ingresara el mensaje*/
+
+    color:#F1C40F  ;
     align-items: center; /* Aliena los elementos*/
     text-align: center;
     margin-left: inherit;
     font-family: 'Kaushan Script', cursive;
-    font-size: 35px;
+    font-size: 28px;
     position: center;
     border-color: #F1C40F ;
 }
@@ -49,7 +50,8 @@ body {
   background-image: url("fondo.jpg");
   background-repeat: no-repeat;   /* no repite la imagen*/
   background-origin: padding-box;  /*especifica el area de origen de la imagen*/
-  background-size: 100% 100%; /* Ancho y alto del fondo*/
+  background-size: 100% 100%; /* Ancho y alto dHace la imagen al mayor tamaño posible sin estirarla.el fondo*/
+  background-size: cover; /* Hace la imagen al mayor tamaño sin estirarla. */
   background-attachment: fixed; /*fija la imagen de fondo */
   background-position: 0px 0px; /*posicion de la imagen*/
   position: static;
@@ -69,6 +71,6 @@ div{
   margin: 1rem;
   padding: 0rem; /*EStablece el area de relleno en sus cuatro lados*/
   text-align: center;
-  margin: auto;
+  margin: top;
 
 }
