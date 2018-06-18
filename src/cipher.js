@@ -3,15 +3,16 @@
 //};
 
 const  cifradoCesar =(texto) =>{
- texto=document.getElementById("textoMensaje").value;
+ texto=document.getElementById("textoMensaje").value; //Obtiene el mensaje ingresado
  //clave=document.getElementById("keyPosicion").value;
 
- let cifradoCont="";
+
+ let cifradoCont=""; //Va guardando las letras
  //let rango;
  // toUpperCase()  --- Covierte en mayusculas
  // charCodeAt()   --- Convierte un String en numero (numero ASQII)
 
-   for (let i=0; i<texto.length; i++){
+   for (let i=0; i<texto.length; i++){ //Realiza ciclos por cada palabra encontrada
       if(parseInt(texto[i])%1 ===0){
        alert("Lo sentimos, no se admiten numeros. Vuelve a intentarlo.-- GRACIAS");
        break;
@@ -28,15 +29,17 @@ const  cifradoCesar =(texto) =>{
         let letra="ä";
         cifradoCont+= letra;
       }
-      else if(texto.charCodeAt(i) >=65 && texto.charCodeAt(i)<=90){ // Mayusculas
-        let numAsq=texto.charCodeAt(i) - 65 + 4 % 26 + 65; // Formula: Obtiene el numero de la letra en ASQII
-        let mensajeCifrado=String.fromCharCode(numAsq); // Cifra el numero y lo convierte a letra
-        cifradoCont+= mensajeCifrado;  //Guarda las letras obtenidas
+      else if(texto.charCodeAt(i) >=65 && texto.charCodeAt(i)<=90 ){ // Mayusculas
+        let textNum=texto.charCodeAt(i); //Obtiene el numero Ascii
+        let numAsq= (textNum - 65 + 4 )% 26 + 65; // Formula: Obtiene el numero a reemplazar de acuerdo a la formula
+        let mensajeCifrado=String.fromCharCode(numAsq); // Obtiene el numero adquirido en numAsq y lo convierte a un caracter de acuerdo al codigo ASCII
+        cifradoCont+= mensajeCifrado;  // Guardando las letras obtenidas
       }
 
-      else if(texto.charCodeAt(i) >=97 && texto.charCodeAt(i)<=122){  // Minusculas
-        let numAsq=texto.charCodeAt(i) - 97 + 4 % 26 + 97; // Formula: Obtiene el numero de la letra en ASQII
-        let mensajeCifrado=String.fromCharCode(numAsq); // Cifra el numero y lo convierte a letra
+      else if(texto.charCodeAt(i) >=97 && texto.charCodeAt(i)<=122 ){  // Minusculas
+        let textNum=texto.charCodeAt(i);  //Obtiene el numero Ascii
+        let numAsq= textNum - 97 + 4 % 26 + 97;  // Formula: Obtiene el numero a reemplazar de acuerdo a la formula
+        let mensajeCifrado=String.fromCharCode(numAsq); // Obtiene el numero adquirido en numAsq y lo convierte a un caracter de acuerdo al codigo ASCII
         cifradoCont+= mensajeCifrado;  //Guarda las letras obtenidas
       }
 
@@ -74,16 +77,18 @@ const descifradoCesar = (texto) => {
        descifradoCont+= letra;
      }
      else if(texto.charCodeAt(i) >=65 && texto.charCodeAt(i)<=90){ // Mayusculas
-       let numAsq=(texto.charCodeAt(i) + 65 - 4) % 26 + 65; // Formula: Obtiene el numero de la letra en ASQII
-       let mensajeCifrado=String.fromCharCode(numAsq); // Cifra el numero y lo convierte a letra
+       let textNum=texto.charCodeAt(i);   //Obtiene el numero Ascii
+       let numAsq=(textNum + 65 - 4 )% 26 + 65; // Formula: Obtiene el numero a reemplazar de acuerdo a la formula
+       let mensajeCifrado=String.fromCharCode(numAsq); // Obtiene el numero adquirido en numAsq y lo convierte a un caracter de acuerdo al codigo ASCII
        descifradoCont+= mensajeCifrado;  //Guarda las letras obtenidas
      }
 
      else if(texto.charCodeAt(i) >=97 && texto.charCodeAt(i)<=122){  // Minusculas
+       let textNum=texto.charCodeAt(i);   //Obtiene el numero Ascii
        //console.log(texto);
-       let numAsq=texto.charCodeAt(i) + 97 - 4 % 26 - 97; // Formula: Obtiene el numero de la letra en ASQII
+       let numAsq=textNum + 97 - 4 % 26 - 97; // Formula: Obtiene el numero a reemplazar de acuerdo a la formula
        //console.log(numAsq);
-       let mensajeCifrado=String.fromCharCode(numAsq); // Cifra el numero y lo convierte a letra
+       let mensajeCifrado=String.fromCharCode(numAsq); // Obtiene el numero adquirido en numAsq y lo convierte a un caracter de acuerdo al codigo ASCII
        descifradoCont+= mensajeCifrado;  //Guarda las letras obtenidas
      }
 

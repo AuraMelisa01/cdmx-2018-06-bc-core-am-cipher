@@ -1,56 +1,78 @@
-#textoMensaje {   //input del txt donde se ingresara el mensaje
-    width: 300px;
-    height: 150px;
-    font-size: 21px;
+h1 {
+
+    text-align: center;  /*Centra el texto*/
+    font-size: 40px;
     font-family: cursive;
-    align-items: center;
-    text-align: center;
-    margin-left: inherit;
+    font-family: 'Kaushan Script', cursive;
+
+}
+
+.titulo{
+  background-color: #F4D03F;
+  border-radius: 500px;
+  margin: auto;
+  margin-top: 20px; /*margen superior*/
+  width: 500px; /*ancho*/
+  height: 60px; /*alto*/
 
 }
 
 p {
-  font-size: 21px;
-  font-family: cursive;
+
+  //font-family: cursive;
+  font-family: 'Kaushan Script', cursive;
+  font-size: 35px;
+  justify-content: center;
 }
 
-#mensajeCifradoDescifrado {   //div donde aparace el resultado del mensaje cifrado y descifrado
-  font-size: 21px;
-  font-family: cursive;
+#textoMensaje {   /*input del txt donde se ingresara el mensaje*/
+    align-items: center; /* Aliena los elementos*/
+    text-align: center;
+    margin-left: inherit;
+    font-family: 'Kaushan Script', cursive;
+    font-size: 35px;
+    position: center;
+    border-color: #F1C40F ;
 }
+
+
+
+.boton{
+  font-family: 'Kaushan Script', cursive;
+  font-size: 30px;
+  border-radius: 100px;
+  border-color: #F1C40F ;
+  border-style:groove;
+  background-color:  #F7DC6F ;
+  position: static;
+
+}
+
 
 body {
-  background-color: #7FE8F2  ;
+  background-color: #F9E79F;
   background-image: url("fondo.jpg");
-  background-position:center;
-  background-size:cover;
+  background-repeat: no-repeat;   /* no repite la imagen*/
+  background-origin: padding-box;  /*especifica el area de origen de la imagen*/
+  background-size: 100% 100%; /* Ancho y alto del fondo*/
+  background-attachment: fixed; /*fija la imagen de fondo */
+  background-position: 0px 0px; /*posicion de la imagen*/
+  position: static;
+
 
 }
 
-div {   //div que contiene todos los demas div de la pagina
-   background-color:red;
-   border-style:outset;
-   width: 470px;
-   border: medium;
-   padding: 1em;
-   display:inline-block;
-   position:inherit;
-   position:center;
-
+div{
+  font-family: 'Kaushan Script', cursive;
+  font-size: 35px;
+  background-size: 100% 100%;
+  position: static;
 }
 
-h1 {
-    text-align: center;
-    font-size: 50px;
-    font-family: cursive;
-    font-style: oblique;
-    border-style: dotted;
-    background-image: url(textura1.jpg);
-
-}
-
-button{
-  font-size: 14px;
-
+.container{
+  margin: 1rem;
+  padding: 0rem; /*EStablece el area de relleno en sus cuatro lados*/
+  text-align: center;
+  margin: auto;
 
 }
